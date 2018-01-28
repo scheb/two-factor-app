@@ -16,10 +16,10 @@ security:
             anonymous: ~
             provider: our_db_provider
             form_login:
-                login_path: login
-                check_path: login
+                login_path: _security_login
+                check_path: _security_login
             logout:
-                path:   logout
+                path:   _security_logout
                 target: home
     access_control:
         - { path: /login, role: IS_AUTHENTICATED_ANONYMOUSLY }
