@@ -4,3 +4,11 @@
 
 _security_logout:
     path: /logout
+
+2fa_login:
+    path: /2fa
+    defaults:
+        _controller: "SchebTwoFactorBundle:Authentication:form"
+
+2fa_login_check:
+    path: /2fa_check
