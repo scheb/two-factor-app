@@ -65,12 +65,12 @@ class User implements UserInterface, \Serializable, EmailTwoFactorInterface, Goo
         return $this->id;
     }
 
-    public function getUsername()
+    public function getUsername(): string
     {
         return $this->username;
     }
 
-    public function getEmail()
+    public function getEmail(): string
     {
         return $this->email;
     }
@@ -116,37 +116,37 @@ class User implements UserInterface, \Serializable, EmailTwoFactorInterface, Goo
             ) = unserialize($serialized);
     }
 
-    public function isEmailAuthEnabled()
+    public function isEmailAuthEnabled(): bool
     {
         return true;
     }
 
-    public function getEmailAuthCode()
+    public function getEmailAuthCode(): int
     {
         return $this->authCode;
     }
 
-    public function setEmailAuthCode($authCode)
+    public function setEmailAuthCode(int $authCode): void
     {
         $this->authCode = $authCode;
     }
 
-    public function getGoogleAuthenticatorSecret()
+    public function getGoogleAuthenticatorSecret(): ?string
     {
         return $this->googleAuthenticatorSecret;
     }
 
-    public function setGoogleAuthenticatorSecret($googleAuthenticatorSecret)
+    public function setGoogleAuthenticatorSecret(?string $googleAuthenticatorSecret): void
     {
         $this->googleAuthenticatorSecret = $googleAuthenticatorSecret;
     }
 
-    public function addTrustedComputer($token, \DateTime $validUntil)
+    public function addTrustedComputer(string $token, \DateTime $validUntil): void
     {
         $this->trusted[$token] = $validUntil->format("r");
     }
 
-    public function isTrustedComputer($token)
+    public function isTrustedComputer(string $token): bool
     {
         if (isset($this->trusted[$token])) {
             $now = new \DateTime();
@@ -156,12 +156,12 @@ class User implements UserInterface, \Serializable, EmailTwoFactorInterface, Goo
         return false;
     }
 
-    public function isBackupCode($code)
+    public function isBackupCode(string $code): bool
     {
         return in_array($code, $this->backupCodes);
     }
 
-    public function invalidateBackupCode($code)
+    public function invalidateBackupCode(string $code): void
     {
         $key = array_search($code, $this->backupCodes);
         if($key !== false){
