@@ -54,12 +54,6 @@ class User implements UserInterface, \Serializable, EmailTwoFactorInterface, Goo
      */
     private $googleAuthenticatorSecret;
 
-    /**
-     * @var array
-     * @ORM\Column(type="json_array")
-     */
-    private $trusted = [];
-
     public function getId()
     {
         return $this->id;
@@ -121,7 +115,7 @@ class User implements UserInterface, \Serializable, EmailTwoFactorInterface, Goo
         return true;
     }
 
-    public function getEmailAuthCode(): int
+    public function getEmailAuthCode(): string
     {
         return $this->authCode;
     }
@@ -141,21 +135,6 @@ class User implements UserInterface, \Serializable, EmailTwoFactorInterface, Goo
         $this->googleAuthenticatorSecret = $googleAuthenticatorSecret;
     }
 
-    public function addTrustedComputer(string $token, \DateTime $validUntil): void
-    {
-        $this->trusted[$token] = $validUntil->format("r");
-    }
-
-    public function isTrustedComputer(string $token): bool
-    {
-        if (isset($this->trusted[$token])) {
-            $now = new \DateTime();
-            $validUntil = new \DateTime($this->trusted[$token]);
-            return $now < $validUntil;
-        }
-        return false;
-    }
-
     public function isBackupCode(string $code): bool
     {
         return in_array($code, $this->backupCodes);
@@ -167,5 +146,10 @@ class User implements UserInterface, \Serializable, EmailTwoFactorInterface, Goo
         if($key !== false){
             unset($this->backupCodes[$key]);
         }
+    }
+
+    public function getTrustedTokenVersion(): int
+    {
+        return 1;
     }
 }
