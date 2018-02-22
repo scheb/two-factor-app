@@ -110,6 +110,11 @@ class User implements UserInterface, \Serializable, EmailTwoFactorInterface, Goo
             ) = unserialize($serialized);
     }
 
+    public function getEmailAuthReceiver(): string
+    {
+        return $this->email;
+    }
+
     public function isEmailAuthEnabled(): bool
     {
         return true;
@@ -120,12 +125,22 @@ class User implements UserInterface, \Serializable, EmailTwoFactorInterface, Goo
         return $this->authCode;
     }
 
-    public function setEmailAuthCode(int $authCode): void
+    public function setEmailAuthCode(string $authCode): void
     {
         $this->authCode = $authCode;
     }
 
-    public function getGoogleAuthenticatorSecret(): ?string
+    public function isGoogleAuthenticatorEnabled(): bool
+    {
+        return !!$this->googleAuthenticatorSecret;
+    }
+
+    public function getGoogleAuthenticatorUsername(): string
+    {
+        return $this->username;
+    }
+
+    public function getGoogleAuthenticatorSecret(): string
     {
         return $this->googleAuthenticatorSecret;
     }
