@@ -1,13 +1,13 @@
 # app/config/config.yml (Sf >= 4: /config/packages/scheb_two_factor.yaml)
 scheb_two_factor:
 
-    # Trusted computer feature
-    trusted_computer:
-        enabled: true                  # If the trusted computer feature should be enabled
-        lifetime: 5184000              # Lifetime of the trusted computer cookie
+    # Trusted device feature
+    trusted_device:
+        enabled: true                  # If the trusted device feature should be enabled
+        lifetime: 5184000              # Lifetime of the trusted device cookie
         extend_lifetime: true
-        cookie_name: trusted_computer  # Name of the trusted computer cookie
-        cookie_secure: false           # Set the 'Secure' (HTTPS Only) flag on the trusted_computer cookie
+        cookie_name: trusted_device    # Name of the trusted device cookie
+        cookie_secure: false           # Set the 'Secure' (HTTPS Only) flag on the trusted device cookie
         cookie_same_site: "lax"        # The same-site option of the cookie, can be "lax" or "strict"
 
     # POST/GET parameter names

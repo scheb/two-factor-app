@@ -5,14 +5,14 @@ use Doctrine\ORM\Mapping as ORM;
 use Scheb\TwoFactorBundle\Model\BackupCodeInterface;
 use Scheb\TwoFactorBundle\Model\Email\TwoFactorInterface as EmailTwoFactorInterface;
 use Scheb\TwoFactorBundle\Model\Google\TwoFactorInterface as GoogleTwoFactorInterface;
-use Scheb\TwoFactorBundle\Model\TrustedComputerInterface;
+use Scheb\TwoFactorBundle\Model\TrustedDeviceInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="user")
  */
-class User implements UserInterface, \Serializable, EmailTwoFactorInterface, GoogleTwoFactorInterface, TrustedComputerInterface, BackupCodeInterface
+class User implements UserInterface, \Serializable, EmailTwoFactorInterface, GoogleTwoFactorInterface, TrustedDeviceInterface, BackupCodeInterface
 {
     /**
      * @ORM\Column(type="integer")
