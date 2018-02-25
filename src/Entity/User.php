@@ -110,7 +110,7 @@ class User implements UserInterface, \Serializable, EmailTwoFactorInterface, Goo
             ) = unserialize($serialized);
     }
 
-    public function getEmailAuthReceiver(): string
+    public function getEmailAuthRecipient(): string
     {
         return $this->email;
     }
