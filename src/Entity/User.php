@@ -38,9 +38,8 @@ class User implements UserInterface, \Serializable, EmailTwoFactorInterface, Goo
 
     /**
      * @var array
-     * @ORM\Column(type="simple_array")
      */
-    private $backupCodes = [];
+    private $backupCodes = [111, 222];
 
     /**
      * @var string $authCode
