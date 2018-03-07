@@ -6,6 +6,9 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+        {% block navigation %}
+            {{ render_esi(controller('App\\Controller\\EsiController::navigation')) }}
+        {% endblock %}
         <div>
             {% if is_granted("ROLE_USER") %}
                 Hi {{ app.user.username }} | <a href="{{ path("_security_logout") }}">Logout</a>
