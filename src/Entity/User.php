@@ -14,6 +14,8 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class User implements UserInterface, \Serializable, EmailTwoFactorInterface, GoogleTwoFactorInterface, TrustedDeviceInterface, BackupCodeInterface
 {
+    private const BACKUP_CODES = [111, 222];
+
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
@@ -37,15 +39,10 @@ class User implements UserInterface, \Serializable, EmailTwoFactorInterface, Goo
     private $email;
 
     /**
-     * @var array
-     */
-    private $backupCodes = [111, 222];
-
-    /**
-     * @var string $authCode
+     * @var string $emailAuthenticationCode
      * @ORM\Column(type="integer")
      */
-    private $authCode;
+    private $emailAuthenticationCode;
 
     /**
      * @var string $googleAuthenticatorSecret
@@ -121,12 +118,12 @@ class User implements UserInterface, \Serializable, EmailTwoFactorInterface, Goo
 
     public function getEmailAuthCode(): string
     {
-        return $this->authCode;
+        return $this->emailAuthenticationCode;
     }
 
     public function setEmailAuthCode(string $authCode): void
     {
-        $this->authCode = $authCode;
+        $this->emailAuthenticationCode = $authCode;
     }
 
     public function isGoogleAuthenticatorEnabled(): bool
@@ -151,15 +148,11 @@ class User implements UserInterface, \Serializable, EmailTwoFactorInterface, Goo
 
     public function isBackupCode(string $code): bool
     {
-        return in_array($code, $this->backupCodes);
+        return in_array($code, self::BACKUP_CODES);
     }
 
     public function invalidateBackupCode(string $code): void
     {
-        $key = array_search($code, $this->backupCodes);
-        if($key !== false){
-            unset($this->backupCodes[$key]);
-        }
     }
 
     public function getTrustedTokenVersion(): int
