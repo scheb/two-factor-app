@@ -26,7 +26,7 @@
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "1.6",
-            "ref": "44d3aa7752dd46f77ba11af2297a25e1dedfb4d0"
+            "ref": "c407ab0b5e5a39b242a52d323a5e84e6d3b7e4c0"
         }
     },
     "doctrine/doctrine-cache-bundle": {
@@ -54,7 +54,7 @@
         "version": "v1.6.2"
     },
     "doctrine/orm": {
-        "version": "v2.6.0"
+        "version": "v2.6.1"
     },
     "egulias/email-validator": {
         "version": "2.1.3"
@@ -69,7 +69,7 @@
         "version": "1.23.0"
     },
     "ocramius/package-versions": {
-        "version": "1.2.0"
+        "version": "1.3.0"
     },
     "ocramius/proxy-manager": {
         "version": "2.1.1"
@@ -101,6 +101,9 @@
     "symfony/cache": {
         "version": "v4.0.3"
     },
+    "symfony/class-loader": {
+        "version": "v3.4.6"
+    },
     "symfony/config": {
         "version": "v4.0.3"
     },
@@ -120,7 +123,7 @@
         "version": "v4.0.3"
     },
     "symfony/doctrine-bridge": {
-        "version": "v4.0.3"
+        "version": "v3.4.6"
     },
     "symfony/dotenv": {
         "version": "v4.0.3"
@@ -175,9 +178,6 @@
             "version": "3.1",
             "ref": "371d1a2b69984710646b09a1182ef1d4308c904f"
         }
-    },
-    "symfony/orm-pack": {
-        "version": "v1.0.5"
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.6.0"
