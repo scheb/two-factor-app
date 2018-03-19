@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1dbac727d5b5933bf9e16f5e4491fba1",
+    "content-hash": "0713499face3a9127d8c9d878c488c79",
     "packages": [
         {
             "name": "doctrine/lexer",
@@ -493,16 +493,16 @@
         },
         {
             "name": "scheb/two-factor-bundle",
-            "version": "v3.0.0",
+            "version": "v3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/scheb/two-factor-bundle.git",
-                "reference": "ddce1d6b61e126f0acf1708a15906524e607c04d"
+                "reference": "34aa5dfc561dc3352134cdc08215f67dc55722b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/scheb/two-factor-bundle/zipball/ddce1d6b61e126f0acf1708a15906524e607c04d",
-                "reference": "ddce1d6b61e126f0acf1708a15906524e607c04d",
+                "url": "https://api.github.com/repos/scheb/two-factor-bundle/zipball/34aa5dfc561dc3352134cdc08215f67dc55722b8",
+                "reference": "34aa5dfc561dc3352134cdc08215f67dc55722b8",
                 "shasum": ""
             },
             "require": {
@@ -550,7 +550,7 @@
                 "two-factor",
                 "two-step"
             ],
-            "time": "2018-03-07T22:59:35+00:00"
+            "time": "2018-03-19T21:24:09+00:00"
         },
         {
             "name": "sonata-project/google-authenticator",
