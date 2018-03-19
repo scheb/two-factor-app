@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use Scheb\TwoFactorBundle\Security\TwoFactor\Provider\Google\GoogleAuthenticatorInterface;
+use Scheb\TwoFactorBundle\Security\TwoFactor\TwoFactorFirewallContext;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -38,5 +40,13 @@ class SecurityController extends Controller
         $plainPassword = 'test';
         $encoded = $encoder->encodePassword($user, $plainPassword);
         return new Response($encoded);
+    }
+
+    /**
+     * @Route("/googleSecret", name="generate_google_secret")
+     */
+    public function googleSecret(GoogleAuthenticatorInterface $googleAuthenticator)
+    {
+        return new Response($googleAuthenticator->generateSecret());
     }
 }
