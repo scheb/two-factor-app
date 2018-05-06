@@ -49,4 +49,12 @@ class SecurityController extends Controller
     {
         return new Response($googleAuthenticator->generateSecret());
     }
+
+    /**
+     * @Route("/2fa/accessible", name="2fa_accessible_route")
+     */
+    public function accessibleDuring2fa()
+    {
+        return new Response("It works!");
+    }
 }
