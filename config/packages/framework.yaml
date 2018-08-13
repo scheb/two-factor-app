@@ -1,7 +1,7 @@
 framework:
     secret: '%env(APP_SECRET)%'
     #default_locale: en
-    #csrf_protection: ~
+    csrf_protection: ~
     #http_method_override: true
 
     # Enables session support. Note that the session will ONLY be started if you read or write from it.
@@ -29,5 +29,5 @@ framework:
         # APCu (not recommended with heavy random-write workloads as memory fragmentation can cause perf issues)
         #app: cache.adapter.apcu
 
-    templating:
-        engines: twig
+#    templating:
+#        engines: twig
