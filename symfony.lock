@@ -1,4 +1,7 @@
 {
+    "beberlei/assert": {
+        "version": "v2.9.6"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -74,6 +77,9 @@
     "ocramius/proxy-manager": {
         "version": "2.1.1"
     },
+    "paragonie/constant_time_encoding": {
+        "version": "v2.2.2"
+    },
     "paragonie/random_compat": {
         "version": "v2.0.11"
     },
@@ -94,6 +100,9 @@
     },
     "sonata-project/google-authenticator": {
         "version": "1.1.0"
+    },
+    "spomky-labs/otphp": {
+        "version": "v9.1.0"
     },
     "swiftmailer/swiftmailer": {
         "version": "v6.0.2"
