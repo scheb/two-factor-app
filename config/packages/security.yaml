@@ -27,6 +27,7 @@ security:
                 auth_code_parameter_name: _auth_code          # Name of the parameter containing the authentication code
                 trusted_parameter_name: _trusted              # Name of the parameter containing the trusted flag
                 multi_factor: true
+                provider: our_db_provider
     access_control:
         - { path: /login, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: /logout, role: IS_AUTHENTICATED_ANONYMOUSLY }
