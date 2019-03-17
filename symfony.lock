@@ -9,19 +9,22 @@
             "branch": "master",
             "version": "1.0",
             "ref": "cb4152ebcadbe620ea2261da1a1c5a9b8cea7672"
-        }
+        },
+        "files": [
+            "./config/routes/annotations.yaml"
+        ]
     },
     "doctrine/cache": {
-        "version": "v1.7.1"
+        "version": "v1.8.0"
     },
     "doctrine/collections": {
         "version": "v1.5.0"
     },
     "doctrine/common": {
-        "version": "v2.8.1"
+        "version": "v2.10.0"
     },
     "doctrine/dbal": {
-        "version": "v2.6.3"
+        "version": "v2.9.2"
     },
     "doctrine/doctrine-bundle": {
         "version": "1.6",
@@ -29,11 +32,17 @@
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "1.6",
-            "ref": "44d3aa7752dd46f77ba11af2297a25e1dedfb4d0"
-        }
+            "ref": "453e89b78ded666f351617baca5ae40d20622351"
+        },
+        "files": [
+            "./config/packages/doctrine.yaml",
+            "./config/packages/prod/doctrine.yaml",
+            "./src/Entity/.gitignore",
+            "./src/Repository/.gitignore"
+        ]
     },
     "doctrine/doctrine-cache-bundle": {
-        "version": "1.3.2"
+        "version": "1.3.5"
     },
     "doctrine/doctrine-migrations-bundle": {
         "version": "1.2",
@@ -42,7 +51,14 @@
             "branch": "master",
             "version": "1.2",
             "ref": "c1431086fec31f17fbcfe6d6d7e92059458facc1"
-        }
+        },
+        "files": [
+            "./config/packages/doctrine_migrations.yaml",
+            "./src/Migrations/.gitignore"
+        ]
+    },
+    "doctrine/event-manager": {
+        "version": "v1.0.0"
     },
     "doctrine/inflector": {
         "version": "v1.3.0"
@@ -54,10 +70,16 @@
         "version": "v1.0.1"
     },
     "doctrine/migrations": {
-        "version": "v1.6.2"
+        "version": "v2.0.0"
     },
     "doctrine/orm": {
-        "version": "v2.6.0"
+        "version": "v2.6.3"
+    },
+    "doctrine/persistence": {
+        "version": "v1.1.0"
+    },
+    "doctrine/reflection": {
+        "version": "v1.0.0"
     },
     "egulias/email-validator": {
         "version": "2.1.3"
@@ -72,16 +94,13 @@
         "version": "1.23.0"
     },
     "ocramius/package-versions": {
-        "version": "1.2.0"
+        "version": "1.4.0"
     },
     "ocramius/proxy-manager": {
-        "version": "2.1.1"
+        "version": "2.2.2"
     },
     "paragonie/constant_time_encoding": {
         "version": "v2.2.2"
-    },
-    "paragonie/random_compat": {
-        "version": "v2.0.11"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -97,9 +116,6 @@
     },
     "scheb/two-factor-bundle": {
         "version": "v3.0.0"
-    },
-    "sonata-project/google-authenticator": {
-        "version": "1.1.0"
     },
     "spomky-labs/otphp": {
         "version": "v9.1.0"
@@ -122,6 +138,9 @@
             "ref": "9f94d3ea453cd8a3b95db7f82592d7344fe3a76a"
         }
     },
+    "symfony/contracts": {
+        "version": "v1.0.2"
+    },
     "symfony/debug": {
         "version": "v4.0.3"
     },
@@ -129,7 +148,7 @@
         "version": "v4.0.3"
     },
     "symfony/doctrine-bridge": {
-        "version": "v4.0.3"
+        "version": "v4.2.4"
     },
     "symfony/dotenv": {
         "version": "v4.0.3"
@@ -195,10 +214,16 @@
         "version": "v4.1.3"
     },
     "symfony/orm-pack": {
-        "version": "v1.0.5"
+        "version": "v1.0.6"
+    },
+    "symfony/polyfill-ctype": {
+        "version": "v1.10.0"
     },
     "symfony/polyfill-intl-icu": {
         "version": "v1.9.0"
+    },
+    "symfony/polyfill-intl-idn": {
+        "version": "v1.10.0"
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.6.0"
@@ -235,6 +260,15 @@
     },
     "symfony/security-core": {
         "version": "v4.0.3"
+    },
+    "symfony/security-csrf": {
+        "version": "v4.2.4"
+    },
+    "symfony/security-guard": {
+        "version": "v4.2.4"
+    },
+    "symfony/security-http": {
+        "version": "v4.2.4"
     },
     "symfony/stopwatch": {
         "version": "v4.0.3"
@@ -275,6 +309,9 @@
     "symfony/var-dumper": {
         "version": "v4.0.3"
     },
+    "symfony/var-exporter": {
+        "version": "v4.2.4"
+    },
     "symfony/web-profiler-bundle": {
         "version": "3.3",
         "recipe": {
@@ -300,9 +337,9 @@
         "version": "v2.4.4"
     },
     "zendframework/zend-code": {
-        "version": "3.3.0"
+        "version": "3.3.1"
     },
     "zendframework/zend-eventmanager": {
-        "version": "3.2.0"
+        "version": "3.2.1"
     }
 }
