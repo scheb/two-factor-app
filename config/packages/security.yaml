@@ -18,6 +18,7 @@ security:
             form_login:
                 login_path: _security_login
                 check_path: _security_login
+                use_referer: true
             logout:
                 path:   _security_logout
                 target: home
