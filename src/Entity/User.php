@@ -9,13 +9,13 @@ use Scheb\TwoFactorBundle\Model\Totp\TotpConfiguration;
 use Scheb\TwoFactorBundle\Model\Totp\TotpConfigurationInterface;
 use Scheb\TwoFactorBundle\Model\Totp\TwoFactorInterface as TotpTwoFactorInterface;
 use Scheb\TwoFactorBundle\Model\TrustedDeviceInterface;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="user")
  */
-class User implements UserInterface, \Serializable, EmailTwoFactorInterface, GoogleTwoFactorInterface, TotpTwoFactorInterface, TrustedDeviceInterface, BackupCodeInterface
+class User implements AdvancedUserInterface, \Serializable, EmailTwoFactorInterface, GoogleTwoFactorInterface, TotpTwoFactorInterface, TrustedDeviceInterface, BackupCodeInterface
 {
     private const BACKUP_CODES = [111, 222];
 
@@ -52,6 +52,12 @@ class User implements UserInterface, \Serializable, EmailTwoFactorInterface, Goo
      * @ORM\Column(type="string")
      */
     private $googleAuthenticatorSecret;
+
+    /**
+     * @var string $isActive
+     * @ORM\Column(type="boolean")
+     */
+    private $isActive;
 
     public function getId()
     {
@@ -95,6 +101,7 @@ class User implements UserInterface, \Serializable, EmailTwoFactorInterface, Goo
             $this->password,
             // see section on salt below
             // $this->salt,
+            $this->isActive,
         ));
     }
 
@@ -106,6 +113,7 @@ class User implements UserInterface, \Serializable, EmailTwoFactorInterface, Goo
             $this->password,
             // see section on salt below
             // $this->salt
+            $this->isActive,
             ) = unserialize($serialized);
     }
 
@@ -176,5 +184,25 @@ class User implements UserInterface, \Serializable, EmailTwoFactorInterface, Goo
     public function getTrustedTokenVersion(): int
     {
         return 1;
+    }
+
+    public function isAccountNonExpired()
+    {
+        return true;
+    }
+
+    public function isAccountNonLocked()
+    {
+        return true;
+    }
+
+    public function isCredentialsNonExpired()
+    {
+        return true;
+    }
+
+    public function isEnabled()
+    {
+        return $this->isActive;
     }
 }
