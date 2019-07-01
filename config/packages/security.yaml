@@ -1,4 +1,6 @@
 security:
+    always_authenticate_before_granting: true
+
     providers:
         our_db_provider:
             entity:
