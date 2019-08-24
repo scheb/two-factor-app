@@ -31,6 +31,8 @@ security:
                 trusted_parameter_name: _trusted              # Name of the parameter containing the trusted flag
                 multi_factor: true
                 provider: our_db_provider
+                prepare_on_login: true
+                prepare_on_access_denied: true
     access_control:
         #- { path: ^/logout, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
