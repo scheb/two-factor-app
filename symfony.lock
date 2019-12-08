@@ -77,6 +77,9 @@
     "paragonie/random_compat": {
         "version": "v2.0.11"
     },
+    "php": {
+        "version": "7.3"
+    },
     "psr/cache": {
         "version": "1.0.1"
     },
@@ -116,6 +119,9 @@
             "ref": "9f94d3ea453cd8a3b95db7f82592d7344fe3a76a"
         }
     },
+    "symfony/contracts": {
+        "version": "v1.1.0"
+    },
     "symfony/debug": {
         "version": "v4.0.3"
     },
@@ -146,6 +152,9 @@
             "ref": "cc1afd81841db36fbef982fe56b48ade6716fac4"
         }
     },
+    "symfony/form": {
+        "version": "v3.4.36"
+    },
     "symfony/framework-bundle": {
         "version": "3.3",
         "recipe": {
@@ -164,6 +173,9 @@
     "symfony/inflector": {
         "version": "v4.0.3"
     },
+    "symfony/intl": {
+        "version": "v4.4.1"
+    },
     "symfony/lts": {
         "version": "4-dev"
     },
@@ -178,6 +190,12 @@
             "version": "3.1",
             "ref": "371d1a2b69984710646b09a1182ef1d4308c904f"
         }
+    },
+    "symfony/options-resolver": {
+        "version": "v4.4.1"
+    },
+    "symfony/polyfill-intl-icu": {
+        "version": "v1.13.1"
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.6.0"

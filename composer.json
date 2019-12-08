@@ -11,6 +11,7 @@
         "symfony/console": "^3.4",
         "symfony/doctrine-bridge": "^3.4",
         "symfony/flex": "^1.0",
+        "symfony/form": "^3.4",
         "symfony/framework-bundle": "^3.4",
         "symfony/lts": "^4@dev",
         "symfony/monolog-bundle": "^3.1",
